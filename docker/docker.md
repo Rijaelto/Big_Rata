@@ -13,6 +13,7 @@ Table of contents
 
 <!--ts-->
    * [Table of contents](#table-of-contents)
+   * [Desinstalacion](#Desinstalacion)
 
 <!--te-->
 
