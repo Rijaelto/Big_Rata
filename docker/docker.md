@@ -1,7 +1,7 @@
 # Docker Tuto
 
 
-![]()
+![](https://github.com/Rijaelto/big_Rata/blob/master/docker/images/dockerlogo.png)
 
 Docker es un sistema de contenedores tremendamente útil que vamos a conocer poco a poco. 
 
