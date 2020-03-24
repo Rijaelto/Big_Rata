@@ -12,7 +12,7 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
 
 <!--ts-->
    * [Desinstalación](#Desinstalación)
-   * [Instalar y habilitar](#Instalar y habilitar)
+   * [Instalar y habilitar](#Instalar-y-habilitar)
 
 <!--te-->
 
