@@ -8,11 +8,9 @@ Docker es un sistema de contenedores tremendamente útil que vamos a conocer poc
 Esto es una guía para uso personal como herramienta de consulta y practica. 
 
 
-Table of contents
-=================
+#Indice
 
 <!--ts-->
-   * [Table of contents](#table-of-contents)
    * [Desinstalacion](#Desinstalacion)
 
 <!--te-->
