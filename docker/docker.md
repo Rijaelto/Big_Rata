@@ -8,7 +8,7 @@ Docker es un sistema de contenedores tremendamente útil que vamos a conocer poc
 Esto es una guía para uso personal como herramienta de consulta y practica. 
 
 
-#Indice
+# Indice
 
 <!--ts-->
    * [Desinstalacion](#Desinstalacion)
@@ -18,9 +18,9 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
 
 Desinstalacion
 ==============
-
+```bash
 `$ sudo apt-get remove docker docker-engine docker.io`
-
+```
 
 	
 
