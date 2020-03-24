@@ -7,10 +7,16 @@ Docker es un sistema de contenedores tremendamente útil que vamos a conocer poc
 
 Esto es una guía para uso personal como herramienta de consulta y practica. 
 
-Unistall
-------
+**Table of Contents**
 
-	sudo apt-get remove docker docker-engine docker.io
+[TOCM]
+
+# Desinstalar
+
+`$ sudo apt-get remove docker docker-engine docker.io`
+
+
+	
 
 Install and enable
 ------
