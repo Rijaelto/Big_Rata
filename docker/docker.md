@@ -117,3 +117,75 @@ EXPOSE 80/tcp
 
 CMD nginx -g 'daemon off;'
 ```
+
+Es un archivo de texto, pero no tiene ninguna extensión, su nombre es dockerfile y es recomendable no cambiar ese nombre. 
+
+
+Images
+------
+
+Teniendo un dockerfile se puede construir una imagen. Para el ejemplo anterior, cogemos el dockerfile anterior y lo metemos en una carpeta llamada helloworld, despues ejecutamos el siguiente comando.
+
+```bash
+$ docker build helloworld
+```
+
+Eso sigue los pasos del dockerfile y nos genera la imagen, en este caso, descargando un ubuntu y siguiendo esos pasos.
+
+```bash
+$ docker images
+```
+
+![](https://github.com/Rijaelto/big_Rata/blob/master/docker/images/images.png)
+
+
+Es la primera, 153 MB de imagen, nada mal. 
+
+La eliminamos usando el comando por su ID.
+
+```bash
+$ docker image rm ae6ac6a54ed8
+```
+
+o
+
+```bash
+$ docker rmi ae6ac6a54ed8
+```
+
+Lo del ID es un rollo, asique creamos la imagen con una etiqueta que nos será más facíl usar. 
+
+```bash
+$ docker build -t hello1:latest helloworld
+```
+
+Se pueden ver datos de la imagen con 
+
+```bash
+$ docker inspect hello1:latest
+```
+
+
+Contenedores
+------
+
+Una vez tenemos la imagen, podemos lanzar el contenedor con 
+
+```bash
+$ docker create --name hellocontainer hello1:latest
+```
+
+Para saber los contenedores activos 
+
+```bash
+$ docker ps 
+```
+
+y para saber todos los contenedores
+
+```bash
+$ docker ps -a
+```
+![](https://github.com/Rijaelto/big_Rata/blob/master/docker/images/containers.png)
+
+
