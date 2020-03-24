@@ -11,19 +11,18 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
 # Indice
 
 <!--ts-->
-   * [Desinstalacion](#Desinstalacion)
+   * [Desinstalación](#Desinstalación)
 
 <!--te-->
 
 
-Desinstalacion
-==============
+Desinstalación
+--------------
+
 ```bash
-`$ sudo apt-get remove docker docker-engine docker.io`
+$ sudo apt-get remove docker docker-engine docker.io
 ```
-
 	
-
 ##H2 header Install and enable
 ------
 
