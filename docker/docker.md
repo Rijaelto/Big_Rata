@@ -12,6 +12,7 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
 
 <!--ts-->
    * [Desinstalación](#Desinstalación)
+   * [Instalar y habilitar](#Instalar y habilitar)
 
 <!--te-->
 
@@ -23,14 +24,25 @@ Desinstalación
 $ sudo apt-get remove docker docker-engine docker.io
 ```
 	
-##H2 header Install and enable
-------
+Instalar y habilitar
+--------------------
 
-	sudo apt install docker.io
+```bash
+$ sudo apt install docker.io
+```
 
-	sudo systemctl start docker
-	sudo systemctl enable docker
-	docker --version
+```bash
+$ sudo systemctl start docker
+$ sudo systemctl enable docker
+$ docker --version
+```
+
+Desenmascarar
+-------------
+
+```bash
+$ sudo systemctl unmask docker
+```
 
 Grupo de usuarios
 ------
