@@ -92,7 +92,7 @@ La salida debería ser algo así:
 ![](https://github.com/Rijaelto/big_Rata/blob/master/docker/images/helloworld.png)
 
 	
-####Pasos que sigue
+Pasos que sigue
                 
 1. Se conecta al demonio. 
 2. Se descarga de docker hub la imagen.
@@ -106,5 +106,14 @@ Dockerfile
 
 El dockerfile permite construir una imagen, este dockerfile es muy sencillo:
 
+```dockerfile
+FROM ubuntu:18.04
 
+RUN apt-get update
+RUN apt-get install nginx -y
+RUN echo "hello world" > /var/www/html/index.html
 
+EXPOSE 80/tcp
+
+CMD nginx -g 'daemon off;'
+```
