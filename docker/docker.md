@@ -14,9 +14,9 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
    * [Desinstalación](#Desinstalación)
    * [Instalar y habilitar](#Instalar-y-habilitar)
    * [Desenmascarar](#Desenmascarar)
-   * [ejemplo](#ejemplo)
-   * [ejemplo](#ejemplo)
-   * [ejemplo](#ejemplo)
+   * [Grupo de usuarios](#Grupo-de-usuarios)
+   * [Hola Mundo](#Hola-Mundo)
+   * [Dockerfile](#Dockerfile)
    * [ejemplo](#ejemplo)
 
 <!--te-->
@@ -53,6 +53,12 @@ $ sudo systemctl enable docker
 $ docker --version
 ```
 
+Para pararlo
+
+```bash
+$ sudo systemctl stop docker
+```
+
 Desenmascarar
 -------------
 
@@ -70,6 +76,8 @@ $ sudo groupadd docker
 $ sudo usermod -aG docker $USER
 ```
 
+Despues hay que desloguearse y volverse a loguear para que recargue, que seguro que se puede hacer de otra forma, también es verdad eso. Nota: Buscarlo algún día
+
 Hola Mundo
 ------
 
@@ -84,3 +92,19 @@ La salida debería ser algo así:
 ![](https://github.com/Rijaelto/big_Rata/blob/master/docker/images/helloworld.png)
 
 	
+####Pasos que sigue
+                
+1. Se conecta al demonio. 
+2. Se descarga de docker hub la imagen.
+3. Crea un contenedor partiendo de esa imagen, y el contenedor genera la salida.
+4. Esa salida se envía al terminal.
+                
+----
+	
+Dockerfile
+------
+
+El dockerfile permite construir una imagen, este dockerfile es muy sencillo:
+
+
+
