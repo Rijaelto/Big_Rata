@@ -1,0 +1,6 @@
+---
+- hosts: local
+  tasks:
+  - name: instala vlc
+    apt: name=vlc state=absent 
+    become: true
