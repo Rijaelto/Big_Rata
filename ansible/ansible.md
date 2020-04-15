@@ -19,7 +19,6 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
    * [handlers](#handlers)
    * [roles](#roles)
    * [ansible Container](#ansible_container)
-   * [ejemplo](#ejemplo)
 
 <!--te-->
 
@@ -409,19 +408,6 @@ Se lanza el playbook y se van ejecutando.
 
 
 
-
-
-
-
-- name: misc task on ubuntu 18.04 instance
-  hosts: "*"
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-  tasks:
-    - debug: var=ansible_host
-
-
-ln -s /media/ernesto/archivos/ .
 
 
 
