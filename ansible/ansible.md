@@ -138,6 +138,11 @@ Se pueden usar comando con -a
 $ ansible local -a "ls -a"
 ```
 
+Ansible ademas tiene variables de entorno, por ejemplo, con esto podríamos saber quien es el usuario
+
+```bash
+- debug: msg="{{ lookup('env','USER') }} is an environment variable"
+```
 
 
 
@@ -237,6 +242,15 @@ Con esto sincronizamos que es mejor para muchos archivos.
       dest: "/home/ernesto/programas/RenomTiny/"
 ```
 
+Si usamos la estructura recomendada por ansible, tendremos las variables y los archivos en carpetas y podremos acceder a ello de la siguiente manera:
+
+```bash
+  - name: Copia de config para tiny renom 
+    copy:
+      src: "{{ role_path }}/files/tinyRenomData/data"
+      dest: "{{ programasPath }}renomTiny"  
+```
+
 Creación de una carpeta. 
 
 ```bash
@@ -292,7 +306,7 @@ La primera de estas modificará una linea del archivo de configuración de fuse 
  
 ```
 
-Con este buscaremos los archivos ejecutables y les cambiaremos los permisos, esto es basicamente transformar una linea de bash en 30 líneas, pero bueno, supongo que habrá mejores formas de hacerlo.
+Con este buscaremos los archivos ejecutables y les cambiaremos los permisos, esto es basicamente transformar una linea de bash en 30 líneas de un archivo yml, pero bueno, supongo que habrá mejores formas de hacerlo.
 
 ```bash     
   - name: buscamos los sh
