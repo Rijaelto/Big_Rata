@@ -17,6 +17,9 @@ Esto es una guía para uso personal como herramienta de consulta y practica.
    * [Grupo de usuarios](#Grupo-de-usuarios)
    * [Hola Mundo](#Hola-Mundo)
    * [Dockerfile](#Dockerfile)
+   * [Images](#Images)
+   * [Contenedores](#Contenedores)
+   * [Despliegue de MongoDB](#Despliegue de MongoDB)
    * [ejemplo](#ejemplo)
 
 <!--te-->
@@ -187,5 +190,65 @@ y para saber todos los contenedores
 $ docker ps -a
 ```
 ![](https://github.com/Rijaelto/big_Rata/blob/master/docker/images/containers.png)
+
+para parar un contenedor 
+
+```bash
+$ docker stop contenedor
+```
+
+para borrarlo
+
+```bash
+$ docker rm contenedor
+```
+
+Despliegue de MongoDB
+------
+
+Vamos a realizar una prueba más o menos real. Desplegaremos mongoDB en un contenedor para poder acceder desde nuestra maquina local.
+
+Descargamos la imagen de mongo, es oficial y por defecto la última versión. 
+
+```bash
+$ docker pull mongo
+```
+
+Si queremos una versión concreta, pues:
+
+```bash
+$ docker pull mongo:4.2.2
+```
+
+Hecho esto, nos creamos una carpeta en la maquina local a la que accedera el contenedor, esto se llama volumen:
+
+```bash
+$ mkdir /home/ernesto/mongodata
+```
+
+Despues creamos el contenedor y indicamos que queremos conectar en el puesto 27017 y que el volumen en el contenedor será la carpeta /data/db, además lo llamaremos mongodb
+
+```bash
+$ docker run --name mongodb -p 27017:27017 -v /home/ernesto/mongodata:/data/db -d mongo -it
+```
+
+Ya está, podemos entrar en el con:
+
+```bash
+$ sudo docker exec -it mongodb bash
+```
+
+Dentro estamos en una bash normal, podemos entrar en mongo con el comando mongo y lo que queramos. 
+
+Podríamos coger una base de datos y restaurarla, en  mi caso tengo una que se llama dbTest, la pongo en mi carpeta local /home/ernesto/mondodata y desde el contenedor ejecuto.
+
+```bash
+$ mongorestore --gzip --archive=/data/db/dbtest.gz
+```
+
+Se puede hacer directamente sin entrar en el contenedor
+
+Podremos acceder desde fuera a la base de datos mediante el puerto 27017, por ejemplo con pymongo
+
 
 
