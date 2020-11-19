@@ -1,4 +1,4 @@
-# Ansible Tuto
+# Java basico
 
 
 ![]()
@@ -12,7 +12,7 @@ Manual basico de Java
    * [Strings y variables](#Strings)
    * [ControlFlujo](#ControlFlujo)      
    * [Clases](#Clases)
-   * [playbooks](#playbooks)   
+   * [Referencias](#Referencias)   
    * [configurationFile](#configurationFile)
    * [handlers](#handlers)
    * [roles](#roles)
@@ -420,6 +420,8 @@ public class Fecha {
 }
 ```
 
+Test
+
 ```Java
 package ejemplofecha;
 
@@ -460,22 +462,252 @@ public class EjemploFecha {
 }
 ```
 
+Aritmetica
+
 
 ```Java
+package aritmetica;
 
+public class Aritmetica {
+    
+    //Atributos de la clase
+    int a;
+    int b;
+    
+    //Constructor Vacio
+    //Recordar que si agregamos un constructor distinto al vacio
+    //ya no se crea este constructor y nosotros debemos crearlo si lo necesitamos
+    Aritmetica(){}
+    
+    //Constructor con 2 argumentos
+    Aritmetica( int a , int b){
+        //Uso del operador this
+        this.a = a;
+        this.b = b;
+    }
+    
+    //Este metodo toma los atributos de la clase para hacer la suma
+    int sumar(){
+        return a + b;
+    }
+    
+    //Metodo restar
+    int restar(){
+        return a - b;
+    }
+    
+    //Metodo multiplicar
+    int multiplicar(){
+        return a * b;
+    }
+    
+    //Metodo dividir
+    int dividir(){
+        return a / b;
+    }
+    
+}
+```
+
+```Java
+package aritmetica;
+
+public class PruebaAritmetica {
+    
+    public static void main(String args[]){
+        
+        //Variables locales
+        int operandoA = 6;
+        int operandoB = 2;
+        
+        //Creamos un objeto de la clase Aritmetica enviando argumentos
+        Aritmetica obj1 = new Aritmetica(operandoA,operandoB);
+        
+        //Imprimir operandos
+        System.out.println("Operando A:" + operandoA + " y operadoB:" + operandoB);
+               
+        //Resultado de la suma
+        System.out.println("\nResultado suma:" + obj1.sumar() );
+        
+        //Resultado de la resta
+        System.out.println("\nResultado resta:" + obj1.restar());
+         
+        //Resultado de la multiplicacion
+        System.out.println("\nResultado multiplicacion:" + obj1.multiplicar());
+        
+        //Resultado de la division
+        System.out.println("\nResultado division:" + obj1.dividir());   
+    }
+```
+
+Caja
+
+```Java
+package caja;
+
+public class Caja {
+
+    private int ancho;
+    private int alto;
+    private int profundo;
+
+    public Caja() {
+    }
+
+    public Caja(int ancho, int alto, int profundo) {
+        this.ancho = ancho;
+        this.alto = alto;
+        this.profundo = profundo;
+    }
+
+    public int calcularVolumen() {
+        return ancho * alto * profundo;
+    }
+
+    public int calcularVolumen(int ancho, int alto, int profundo) {
+        return ancho * alto * profundo;
+    }
+}
+```
+
+```Java
+package caja;
+
+public class PruebaCaja {
+
+    public static void main(String args[]) {
+
+        int medidaAncho = 3;
+        int medidaAlto = 2;
+        int medidaProf = 6;
+
+        Caja caja1 = new Caja();
+        int resultado = caja1.calcularVolumen(medidaAncho, medidaAlto, medidaProf);
+
+        System.out.println("resultado de caja 1:" + resultado);
+
+        Caja caja2 = new Caja(2, 4, 6);
+        System.out.println("resultado de caja 2:" + caja2.calcularVolumen());
+    }
+}
+```
+
+Definir una clase dentro de otra clase
+
+```Java
+package palabrareturnclases;
+
+public class PalabraReturnClases {
+
+    public static void main(String args[]) {
+        Suma s = creaObjetoSuma();
+        int resultado = s.a + s.b;
+        System.out.println("Resultado:" + resultado);
+    }
+
+    public static Suma creaObjetoSuma() {
+        Suma s = new Suma(3, 4);
+        return s;
+    }
+}
+
+class Suma {
+    int a;
+    int b;
+
+    Suma(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+}
 ```
 
 ```Java
 
 ```
 
+```Java
 
-configurationFile
+```
+
+
+
+Referencias
 -----------------
 
 ```Java
+package pasoporreferencia;
+
+public class Persona {
+    String nombre;
+    
+    public void cambiarNombre(String nuevoNombre){
+        this.nombre = nuevoNombre;
+    }
+    
+    public String obtenerNombre(){
+        return nombre;
+    }
+}
+```
+
+
+```Java
+package pasoporreferencia;
+
+public class PasoPorReferencia {
+
+    public static void main(String[] args) {
+        Persona p = new Persona();
+        p.cambiarNombre("Juan");
+        imprimirNombre(p);//Imprime Juan
+        modificarPersona(p);
+        imprimirNombre(p);//Imprime Carlos
+    }
+
+    public static void modificarPersona(Persona arg){
+        arg.cambiarNombre("Carlos");
+    }
+    
+    public static void imprimirNombre(Persona p ){
+        System.out.println("Valor recibido :" + p.obtenerNombre());
+    }
+}
+```
+
+Paso por valor
+
+```Java
+package pasoporvalor;
+
+public class PasoPorValor {
+
+    public static void main(String[] args) {
+        int x = 10;       
+        imprimir(x);//Imprime 10
+        cambiarValor(x);
+        imprimir(x);//Imprime 10
+    }
+    
+    public static void cambiarValor(int i){
+        i=200;
+    }
+    
+    public static void imprimir(int arg){
+        System.out.println("Valor recibido:" + arg);
+    }
+    
+}
+```
+
+```Java
 
 ```
+
+```Java
+
+```
+
 
 handlers
 --------
