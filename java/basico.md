@@ -16,7 +16,7 @@ Manual basico de Java
    * [configurationFile](#configurationFile)
    * [handlers](#handlers)
    * [roles](#roles)
-   * [ansible Container](#ansible_container)
+   * [Funciones](#Funciones)
 
 <!--te-->
 
@@ -715,19 +715,68 @@ handlers
 ```Java
 
 ```
-ansible Container
+
+roles
 -----------------
 ```Java
 
 ```
 
-roles
+Funciones
 -----
 
-```Java
+Función para partir una cadena justificando, aproximación
 
+```Java
+String a = "El perro de San Roque no tiene rabo porque Ramón Ramírez se lo ha cortado. Pobre perro, que no había hecho nada.";
+int tamaño = 23;
+
+String[] splited = a.split("\\s+");
+String subString = "";
+int limite = splited.length;
+for (int contador = 0; contador < limite; contador++) {
+    subString = subString + splited[contador] +" ";
+    if (contador+2 > limite){
+        System.out.println(subString);
+    }
+    else if (subString.length() == tamaño || (subString+splited[contador+1]).length() > tamaño){
+        System.out.println(subString);
+        subString = "";
+    }
 ```
 
+Suma de todos los numeros enteros multiplos de 3 y 7 entre 100 y 1000 
 
+```Java
+        int suma = 0;
+        for (int contador = 100; contador < 1000; contador++) {
+            
+            if (contador%3 == 0 || contador%7 == 0){
+                suma = suma + contador;
+                
+            }
+            
+        }
+        
+        System.out.println("Suma:" + suma);
+```
 
+Multiplicador de matrices
 
+```Java
+    int[][] a = {{1,2,3},{4,5,6}};
+    int[][] b = {{7,8},{9,10},{11,12}};
+    if (a.length != b[0].length){
+        System.out.println("Mal");
+    }
+    int[][] resultado = new int[a.length][b[0].length];
+        for (int x=0; x < resultado.length; x++) {
+            for (int y=0; y < resultado[x].length; y++) {
+                for (int k = 0; k < a[0].length; k++) {
+                    System.out.println("A["+x+"]["+k+"]*B["+k+"]["+y+"]");
+                    resultado[x][y] += a[x][k] * b[k][y];
+                }               
+            }
+       }  
+    
+```
